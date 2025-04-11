@@ -1,13 +1,13 @@
 <template>
-  <v-footer app>
+  <v-footer app color="indigo-darken-4" class="white--text">
     <v-container>
       <v-row align="center" justify="center">
         <v-col cols="auto">
           <h2>Take</h2>
         </v-col>
-        <v-col cols="auto">
+        <!--<v-col cols="auto">
           
-        </v-col>
+        </v-col>-->
       </v-row>
       <v-row align="center">
         <v-col class="text-center">
