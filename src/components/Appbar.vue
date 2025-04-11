@@ -5,6 +5,7 @@
 		</template>
 		<v-toolbar-items>
 			<v-btn to="/">TOP</v-btn>
+			<v-btn to="/kakomon">過去問</v-btn>
 			<v-btn to="/about">About</v-btn>
 		</v-toolbar-items>
 	</v-app-bar>
