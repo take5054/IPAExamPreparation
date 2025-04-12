@@ -12,13 +12,14 @@
         <ExamCategory Name="FE" FullName="基本情報技術者試験" AM="科目A" PM="科目B" />
       </v-col>
       <v-col>
-        <ExamCategory Name="AP" FullName="応用情報技術者試験" />
+        <ExamCategory Name="AP" FullName="応用情報技術者試験" AMURL="/kakomon/AP-AM" />
       </v-col>
     </v-row>
+    <router-view />
   </v-container>
 </template>
 
 <script lang="ts" setup>
-import HeaderParallax from '../components/HeaderParallax.vue';
+import HeaderParallax from '../../components/HeaderParallax.vue';
 import ExamCategory from '@/components/ExamCategory.vue';
 </script>
