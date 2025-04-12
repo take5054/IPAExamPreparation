@@ -1,5 +1,5 @@
 <template>
-	<v-app-bar app scroll-behavior="hide  collapse">
+	<v-app-bar app scroll-behavior="hide  collapse" color="indigo darken-4" dark>
 		<template v-slot:prepend>
 			<v-app-bar-nav-icon></v-app-bar-nav-icon>
 		</template>
