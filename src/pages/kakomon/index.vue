@@ -9,7 +9,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <ExamCategory Name="FE" FullName="基本情報技術者試験" AM="科目A" PM="科目B" />
+        <ExamCategory Name="FE" FullName="基本情報技術者試験" AM="科目A" PM="科目B" AMURL="/kakomon/FE-AM" />
       </v-col>
       <v-col>
         <ExamCategory Name="AP" FullName="応用情報技術者試験" AMURL="/kakomon/AP-AM" />
