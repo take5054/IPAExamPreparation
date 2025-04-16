@@ -12,9 +12,9 @@
       <v-col>
         <h2>新着情報</h2>
         <div class="whats-news">
-          <v-card v-for="(item, index) in updateHistory" :key="index" class="mb-2" outlined>
-            <v-card-title>{{ item.description }}</v-card-title>
-            <v-card-subtitle class="mb-2">更新日 {{ item.date }}</v-card-subtitle>
+          <v-card v-for="(item, index) in whatsNews" :key="index" class="mb-2" outlined>
+            <v-card-title>{{ item[1] }}</v-card-title>
+            <v-card-subtitle class="mb-2">更新日 {{ item[0] }}</v-card-subtitle>
           </v-card>
         </div>
       </v-col>
@@ -23,22 +23,23 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import HeaderParallax from '@/components/HeaderParallax.vue';
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import HeaderParallax from '../components/HeaderParallax.vue'
 
-// 更新履歴データ(仮置き・バックエンドから取得するように変更予定)
-const updateHistory = ref([
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'test' },
-  { date: '2025-04-09', description: 'サイトの開発を開始' },
-]);
+const whatsNews = ref<any[]>([])
+
+onMounted(async () => {
+  try {
+    const res = await axios.get("http://localhost:8000/whats-new")
+    whatsNews.value = res.data.sort((a: (string | number | Date)[], b: (string | number | Date)[]) => {
+      // 日付を比較して降順にソート
+      return new Date(b[0]).getTime() - new Date(a[0]).getTime();
+    });
+  } catch (error) {
+    console.error("データ取得エラー", error);
+  }
+})
 </script>
 
 <style scoped>
