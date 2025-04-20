@@ -12,6 +12,11 @@ import AMQuestion from '@/pages/kakomon/AM-Question.vue'
 // 過去問のルーティング
 const kakomonRoutes = [
   {
+    path: '/kakomon/FE-AM/:id',
+    name: 'FE-AM-Detail',
+    component: AMQuestion,
+  },
+  {
     path: '/kakomon/AP-AM/:id',
     name: 'AP-AM-Detail',
     component: AMQuestion,

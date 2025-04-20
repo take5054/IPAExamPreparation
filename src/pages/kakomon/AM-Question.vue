@@ -22,8 +22,23 @@ const detailData = ref<any>({});
 
 onMounted(async () => {
   try {
-    const res = await axios.get(`http://localhost:8000/ap-am-data/${route.params.id}`);
+    let apiUrl = '';
+
+    // 現在のURLに応じてAPIのURLを分ける
+    if (route.path.includes('/kakomon/AP-AM')) {
+
+      apiUrl = `http://localhost:8000/ap-am-data/${route.params.id}`;
+    } else if (route.path.includes('/kakomon/FE-AM')) {
+      apiUrl = `http://localhost:8000/fe-am-data/${route.params.id}`;
+    } else {
+      console.error('不明なパスです:', route.path);
+      return;
+    }
+
+    // APIリクエストを送信
+    const res = await axios.get(apiUrl);
     detailData.value = res.data;
+
   } catch (error) {
     console.error("データ取得エラー", error);
   }
