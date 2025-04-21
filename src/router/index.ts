@@ -7,18 +7,33 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
-import AMQuestion from '@/pages/kakomon/AM-Question-overview.vue'
+import AMQuestionOverview from '@/pages/kakomon/AM-Question-overview.vue'
+import AMQuestion  from '@/pages/kakomon/AM-Question.vue';
 
 // 過去問のルーティング
 const kakomonRoutes = [
   {
     path: '/kakomon/FE-AM/:id',
     name: 'FE-AM-Detail',
-    component: AMQuestion,
+    component: AMQuestionOverview,
   },
   {
     path: '/kakomon/AP-AM/:id',
     name: 'AP-AM-Detail',
+    component: AMQuestionOverview,
+  },
+];
+
+// 午前問題のルーティング
+const AMQuestionRoutes = [
+  {
+    path: '/kakomon/FE-AM/:yearID/:questionID',
+    name: 'FE-AM-Question',
+    component: AMQuestion,
+  },
+  {
+    path: '/kakomon/AP-AM/:yearID/:questionID',
+    name: 'AP-AM-Question',
     component: AMQuestion,
   },
 ];
@@ -27,7 +42,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     ...routes,
-    ...kakomonRoutes,],
+    ...kakomonRoutes,
+    ...AMQuestionRoutes,],
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804

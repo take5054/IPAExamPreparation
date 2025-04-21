@@ -23,13 +23,14 @@ onMounted(async () => {
 
     // 現在のURLに応じてAPIのURLを分ける
     if (route.path.includes('/kakomon/AP-AM')) {
-      apiUrl = `http://localhost:8000/ap-am-data/${route.params.id}`;
+      apiUrl = `http://localhost:8000/ap-am-data/${route.params.yearID}`;
     } else if (route.path.includes('/kakomon/FE-AM')) {
-      apiUrl = `http://localhost:8000/fe-am-data/${route.params.id}`;
+      apiUrl = `http://localhost:8000/fe-am-data/${route.params.yearID}`;
     } else {
       console.error('不明なパスです:', route.path);
       return;
     }
+    apiUrl += `/${route.params.questionID}`; // 問題IDを追加
     
     // APIリクエストを送信
     const res = await axios.get(apiUrl);
