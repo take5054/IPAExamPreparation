@@ -7,7 +7,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
-import AMQuestion from '@/pages/kakomon/AM-Question.vue'
+import AMQuestion from '@/pages/kakomon/AM-Question-overview.vue'
 
 // 過去問のルーティング
 const kakomonRoutes = [
