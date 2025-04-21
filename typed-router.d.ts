@@ -21,6 +21,7 @@ declare module 'vue-router/auto-routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/About': RouteRecordInfo<'/About', '/About', Record<never, never>, Record<never, never>>,
     '/kakomon/': RouteRecordInfo<'/kakomon/', '/kakomon', Record<never, never>, Record<never, never>>,
+    '/kakomon/AM-Question': RouteRecordInfo<'/kakomon/AM-Question', '/kakomon/AM-Question', Record<never, never>, Record<never, never>>,
     '/kakomon/AM-Question-overview': RouteRecordInfo<'/kakomon/AM-Question-overview', '/kakomon/AM-Question-overview', Record<never, never>, Record<never, never>>,
     '/kakomon/AP-AM': RouteRecordInfo<'/kakomon/AP-AM', '/kakomon/AP-AM', Record<never, never>, Record<never, never>>,
     '/kakomon/FE-AM': RouteRecordInfo<'/kakomon/FE-AM', '/kakomon/FE-AM', Record<never, never>, Record<never, never>>,
