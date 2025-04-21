@@ -3,10 +3,14 @@
     <v-row>
       <v-col>
         <h1>問題一覧</h1>
+        <v-divider thickness="5" class="mb-4" />
         <!-- Questions の Text を表示 -->
-        <div v-for="(question, index) in detailData.Questions" :key="index">
-          <p>{{ question.Text }}</p>
-        </div>
+        <v-card v-for="(question, index) in detailData.Questions" :key="index" class="mb-2" elevation="4">
+          <v-card-title>
+            <div style="display: inline;">問{{ index + 1 }}</div>
+            <div style="display: inline;" class="ml-4">{{ question.Text }}</div>
+          </v-card-title>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>

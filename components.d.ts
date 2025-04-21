@@ -12,9 +12,6 @@ declare module 'vue' {
     ExamCategory: typeof import('./src/components/ExamCategory.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     HeaderParallax: typeof import('./src/components/HeaderParallax.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    Kubun: typeof import('./src/components/kubun.vue')['default']
-    Parallax: typeof import('./src/components/Parallax.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
