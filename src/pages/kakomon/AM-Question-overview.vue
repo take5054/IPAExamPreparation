@@ -5,7 +5,7 @@
         <h1>問題一覧</h1>
         <v-divider thickness="5" class="mb-4" />
         <!-- Questions の Text を表示 -->
-        <v-card v-for="(question, index) in detailData.Questions" :key="index" class="mb-2" elevation="4" :to="`${route.path}/q${index + 1}`">
+        <v-card v-for="(question, index) in detailData.Questions" :key="index" class="mb-2" elevation="4" :to="`${route.path}/${index + 1}`">
           <v-card-title>
             <div style="display: inline;">問{{ index + 1 }}</div>
             <div style="display: inline;" class="ml-4">{{ question.Text }}</div>
