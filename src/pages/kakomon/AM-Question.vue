@@ -34,7 +34,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <div>{{ detailData.CorrectAnswer }}</div>
+        <div>{{ answerOptions[detailData.CorrectAnswer - 1] }}</div>
       </v-col>
     </v-row>
   </v-container>
