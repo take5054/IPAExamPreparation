@@ -34,7 +34,10 @@
     </v-row>
     <v-row>
       <v-col>
-        <div>{{ answerOptions[detailData.CorrectAnswer - 1] }}</div>
+        <v-card class="pa-4" elevation="4">
+          <v-card-title>{{ answerOptions[detailData.CorrectAnswer - 1] }}</v-card-title>
+          <div>{{ detailData.Explanation }}</div>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
